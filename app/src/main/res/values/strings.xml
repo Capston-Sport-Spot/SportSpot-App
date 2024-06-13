@@ -23,7 +23,7 @@
 
 
     <string name="navigation_home_title">Home</string>
-    <string name="navigation_event_title">Event</string>
+    <string name="navigation_event_title">Booking</string>
     <string name="navigation_news_title">News</string>
     <string name="navigation_profile_title">Profile</string>
 
@@ -33,8 +33,17 @@
 
     <string name="profile_image">john doe</string>
     <string name="welcome_to_sportspot">Welcome to SportSpot</string>
-    <string name="deskirpsi_sportspot">SportSpot adalah aplikasi pemesanan lapangan olahraga yang memudahkan Anda untuk menemukan dan memesan lapangan sesuai kebutuhan.</string>
+    <string name="deskirpsi_sportspot">SportSpot adalah aplikasi pemesanan lapangan olahraga untuk menemukan dan memesan lapangan</string>
     <string name="pilih_olahraga">Pilih Olahraga</string>
+    <string name="badminton">Badminton</string>
+    <string name="basket">Basket</string>
+    <string name="rekomendasi_lapangan">Rekomendasi Lapangan</string>
+    <string name="futsal">Futsal</string>
+    <string name="text_futsal">Futsal</string>
+    <string name="cari_lapangan">Cari Lapangan</string>
+    <string name="text_recomend">Rekomendasi Lapangan</string>
+    <string name="text_basket">Basket</string>
+    <string name="text_badminton">Badminton</string>
 
 
 </resources>
