@@ -21,16 +21,10 @@
             android:name=".view.welcome.WelcomeActivity"
             android:exported="true" />
         <activity
-            android:name=".view.main.BookingActivity"
-            android:exported="false"/>
-        <activity
             android:name=".view.main.BasketActivity"
             android:exported="false" />
         <activity
             android:name=".view.main.FutsalActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".view.profile.ProfileActivity"
