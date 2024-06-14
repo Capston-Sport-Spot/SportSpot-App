@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Sportspot"
         tools:targetApi="31">
         <activity
+            android:name=".view.main.BookingActivity"
+            android:exported="false"/>
+        <activity
             android:name=".view.main.BasketActivity"
             android:exported="false"/>
         <activity

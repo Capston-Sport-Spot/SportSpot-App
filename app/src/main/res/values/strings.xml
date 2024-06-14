@@ -47,6 +47,17 @@
     <string name="alamat">Alamat</string>
     <string name="kota">Kota</string>
     <string name="nomorhp">Nomor Hp</string>
+    <string name="namafutsal">Masukan Lapangan Futsal</string>
+    <string name="namefield">Name</string>
+    <string name="informasi">Informasi</string>
+    <string name="description_text">Nama Lapangan</string>
+    <string name="tanggal_booking">Tanggal Booking</string>
+    <string name="tgl_booking">Tanggal Booking</string>
+    <string name="tanggal_datang">Tanggal</string>
+    <string name="pilih_tanggal_datang">"Pilih Tanggal Booking "</string>
+    <string name="jam_datang">Jam</string>
+    <string name="pilih_jam_datang">Pilih Jam Booking</string>
+    <string name="booking">Booking</string>
 
 
 </resources>

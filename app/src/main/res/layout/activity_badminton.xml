@@ -8,12 +8,12 @@
     tools:context=".view.main.BadmintonActivity">
 
     <TextView
-        android:id="@+id/text_futsal"
+        android:id="@+id/text_badminton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
-        android:text="@string/text_futsal"
+        android:text="@string/text_badminton"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_futsal">
+        app:layout_constraintTop_toBottomOf="@+id/text_badminton">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameEditText"
