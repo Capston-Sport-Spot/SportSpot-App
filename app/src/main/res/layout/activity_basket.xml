@@ -11,9 +11,9 @@
         android:id="@+id/text_basket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="33dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/text_basket"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -64,9 +64,9 @@
         android:id="@+id/text_recomend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
         android:layout_marginTop="140dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/text_recomend"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@id/text_recomend"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/item_field" />
+        tools:listitem="@layout/item_row" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

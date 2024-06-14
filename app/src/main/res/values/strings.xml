@@ -44,6 +44,9 @@
     <string name="text_recomend">Rekomendasi Lapangan</string>
     <string name="text_basket">Basket</string>
     <string name="text_badminton">Badminton</string>
+    <string name="alamat">Alamat</string>
+    <string name="kota">Kota</string>
+    <string name="nomorhp">Nomor Hp</string>
 
 
 </resources>
