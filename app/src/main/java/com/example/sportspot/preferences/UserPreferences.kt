@@ -15,37 +15,36 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "to
 class UserPreferences private constructor(private val dataStore: DataStore<Preferences>) {
 
 
-    suspend fun saveAuthToken(data: User) {
+    suspend fun saveAuthToken(data: UserModel) {
         dataStore.edit { preferences ->
             preferences[TOKEN_KEY] = data.token
             preferences[IS_LOGIN_KEY] = true
         }
     }
 
-    fun getTokenKey(): Flow<User> {
+    fun getSession(): Flow<UserModel> {
         return dataStore.data.map { preferences ->
-            User(
+            UserModel(
+                preferences[PERIOD_TIME_KEY].toString(),
+                preferences[ID_KEY].toString(),
+                preferences[EMAIL_KEY].toString(),
+                preferences[USERNAME_KEY].toString(),
                 preferences[TOKEN_KEY].toString(),
                 preferences[IS_LOGIN_KEY] ?: false
             )
         }
-    }
-    suspend fun clearToken() {
-        dataStore.edit { preferences ->
-            preferences.remove(TOKEN_KEY)
-            preferences.remove(NAME_KEY)
-            preferences.remove(USER_ID)
-            preferences[IS_LOGIN_KEY] = false
-        }
-    }
-    companion object {
 
+    }
+
+    companion object {
         @Volatile
         private var INSTANCE: UserPreferences? = null
 
+        private val PERIOD_TIME_KEY = stringPreferencesKey("periodTime")
+        private val ID_KEY = stringPreferencesKey("id")
+        private val EMAIL_KEY = stringPreferencesKey("email")
+        private val USERNAME_KEY = stringPreferencesKey("username")
         private val TOKEN_KEY = stringPreferencesKey("token")
-        private val NAME_KEY = stringPreferencesKey("name")
-        private val USER_ID = stringPreferencesKey("userId")
         private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
 
         fun getInstance(dataStore: DataStore<Preferences>): UserPreferences {

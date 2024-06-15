@@ -22,7 +22,7 @@ object ApiConfig {
             .addInterceptor(authInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("http://34.101.148.83:9000/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

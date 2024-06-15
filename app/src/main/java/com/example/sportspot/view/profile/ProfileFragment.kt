@@ -1,20 +1,14 @@
 package com.example.sportspot.view.profile
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
-import androidx.lifecycle.lifecycleScope
 import com.example.sportspot.R
 import com.example.sportspot.api.ApiService
 import com.example.sportspot.preferences.UserPreferences
-import com.example.sportspot.repository.UserRepository
-import com.example.sportspot.view.login.LoginActivity
-import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

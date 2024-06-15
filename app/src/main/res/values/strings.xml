@@ -3,6 +3,7 @@
 
     <string name="title_login_page">Let\'s book your field!</string>
     <string name="email">email</string>
+    <string name="displayName">displayName</string>
     <string name="password">password</string>
     <string name="login">Login</string>
     <string name="title_register_page">Fill out your details first!</string>
@@ -69,6 +70,19 @@
     <string name="welcome_imageview">Welcome ImageView</string>
     <string name="button_register">Register</string>
     <string name="button_login">Login</string>
+
+    <string name="email_cannot_be_empty">email_cannot_be_empty</string>
+    <string name="password_cannot_be_empty">password_cannot_be_empty</string>
+    <string name="displayName_cannot_be_empty">displayName_cannot_be_empty</string>
+    <string name="alamat_cannot_be_empty">alamat_cannot_be_empty</string>
+    <string name="kota_cannot_be_empty">kota_cannot_be_empty</string>
+    <string name="nomorhp_cannot_be_empty">nomorhp_cannot_be_empty</string>
+
+    <string name="register_success">register_success</string>
+    <string name="continuee">continuee</string>
+
+
+
 
 
 </resources>
