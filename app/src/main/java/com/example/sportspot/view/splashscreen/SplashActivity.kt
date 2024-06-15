@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sportspot.R
+import com.example.sportspot.view.login.LoginActivity
 import com.example.sportspot.view.register.RegisterActivity
+import com.example.sportspot.view.welcome.WelcomeActivity
 
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
@@ -21,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
         // Using Handler to delay the start of the MainActivity
         Handler().postDelayed({
             // Start MainActivity after the splash timeout
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
 
             // Close this activity

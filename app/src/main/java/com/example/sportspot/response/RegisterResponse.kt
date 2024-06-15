@@ -11,14 +11,14 @@ data class RegisterResponse(
 	val user: User? = null
 )
 
-data class User(
-
-	@field:SerializedName("uid")
-	val uid: String? = null,
-
-	@field:SerializedName("displayName")
-	val displayName: String? = null,
-
-	@field:SerializedName("email")
-	val email: String? = null
-)
+//data class User(
+//
+//	@field:SerializedName("uid")
+//	val uid: String? = null,
+//
+//	@field:SerializedName("displayName")
+//	val displayName: String? = null,
+//
+//	@field:SerializedName("email")
+//	val email: String? = null
+//)
