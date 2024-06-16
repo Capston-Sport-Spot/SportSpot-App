@@ -7,6 +7,7 @@ import com.example.sportspot.preferences.Injection
 import com.example.sportspot.repository.UserRepository
 import com.example.sportspot.view.login.LoginViewModel
 import com.example.sportspot.view.main.MainViewModel
+import com.example.sportspot.view.profile.ProfileViewModel
 import com.example.sportspot.view.register.RegisterViewModel
 
 class ViewModelFactory(private val repository: UserRepository) : ViewModelProvider.NewInstanceFactory() {
@@ -22,6 +23,9 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                ProfileViewModel(repository) as T
             }
 //            modelClass.isAssignableFrom(HealthViewModel::class.java) -> {
 //                HealthViewModel(repository) as T

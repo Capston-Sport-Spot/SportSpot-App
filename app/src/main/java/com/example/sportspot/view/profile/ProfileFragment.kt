@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import android.provider.Settings
+import android.util.Log
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.sportspot.R
 import com.example.sportspot.databinding.FragmentProfileBinding
 import com.example.sportspot.view.ViewModelFactory
@@ -18,6 +20,10 @@ import com.example.sportspot.view.main.MainViewModel
 class ProfileFragment : Fragment() {
 
     private val viewModel by viewModels<MainViewModel> {
+        ViewModelFactory.getInstance(requireActivity())
+    }
+
+    private val viewModeel by viewModels<ProfileViewModel> {
         ViewModelFactory.getInstance(requireActivity())
     }
 
@@ -38,21 +44,20 @@ class ProfileFragment : Fragment() {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
 
-        viewModel.getSession().observe(requireActivity()) { user ->
-            binding.tvProfileName.text = user.displayName
-        }
-        viewModel.getSession().observe(requireActivity()) { user ->
-            binding.tvProfileEmail.text = user.email
-        }
-        viewModel.getSession().observe(requireActivity()) { user ->
-            binding.tvProfilePhone.text = user.hp
-        }
-        viewModel.getSession().observe(requireActivity()) { user ->
-            binding.tvProfileAddress.text = user.alamat
-        }
-        viewModel.getSession().observe(requireActivity()) { user ->
-            binding.tvProfileCity.text = user.kota
-        }
+        //tolong simpan data profilenya di sini
+        viewModeel.profile.observe(viewLifecycleOwner, Observer { profile ->
+            if (profile != null) {
+                binding.tvProfileEmail.text = profile.email
+                binding.tvProfileName.text = profile.displayName
+                binding.tvProfilePhone.text = profile.hp
+                binding.tvProfileAddress.text = profile.alamat
+                binding.tvProfileCity.text = profile.kota
+
+                // Perbarui UI lainnya sesuai dengan data profil
+            }
+        })
+
+        viewModeel.fetchProfile()
 
         binding.btnLogout.setOnClickListener {
             val builder = AlertDialog.Builder(requireActivity())

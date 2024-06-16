@@ -8,9 +8,11 @@ import com.example.sportspot.preferences.UserModel
 import com.example.sportspot.preferences.UserPreferences
 import com.example.sportspot.response.ErrorResponse
 import com.example.sportspot.response.LoginResponse
+import com.example.sportspot.response.ProfileResponse
 import com.example.sportspot.response.RegisterResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.firstOrNull
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +26,9 @@ class UserRepository private constructor(
 
     var _isLoading = MutableLiveData<Boolean>()
     var isLoading: LiveData<Boolean> = _isLoading
+
+    private val _profileResponse = MutableLiveData<ProfileResponse>()
+    val profileResponse: LiveData<ProfileResponse> = _profileResponse
 
     suspend fun register(email: String, password: String, displayName: String, alamat: String, kota: String, hp: String): RegisterResponse {
         return apiService.register(email, password, displayName, alamat, kota, hp)
@@ -52,6 +57,31 @@ class UserRepository private constructor(
                 _loginResponse.value = LoginResponse(message = errorMessage)
             }
         })
+    }
+
+    suspend fun getProfile() {
+        val token = getBearerToken()
+        val call = apiService.getProfile(token)
+
+        call.enqueue(object : Callback<ProfileResponse> {
+            override fun onResponse(call: Call<ProfileResponse>, response: Response<ProfileResponse>) {
+                if (response.isSuccessful) {
+                    _profileResponse.value = response.body()
+                } else {
+                    val errorMessage = extractErrorMessage(response)
+                    Log.e("UserRepo", "Failed to get profile: $errorMessage")
+                }
+            }
+
+            override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
+                Log.e("UserRepo", "Failed to get profile: ${t.message}")
+            }
+        })
+    }
+
+    private suspend fun getBearerToken(): String {
+        val userModel = userPreference.getSession().firstOrNull()
+        return "Bearer ${userModel?.token}"
     }
 
     private fun extractErrorMessage(response: Response<*>): String {
