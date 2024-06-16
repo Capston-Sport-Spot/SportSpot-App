@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Sportspot</string>
+
+    <string name="title_login_page">Let\'s book your field!</string>
+    <string name="email">email</string>
+    <string name="displayName">displayName</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="title_register_page">Fill out your details first!</string>
+    <string name="name">name</string>
+    <string name="signup">Sign Up</string>
+    <string name="title_welcome_page">Welcome to SportSpot</string>
+    <string name="message_welcome_page">Let\'s share Bangkit stories with Bangkit Story. Capture and share learning moments in your Bangkit Independent Study.</string>
+
+    <string name="invalid_email_address">Invalid email address</string>
+    <string name="password_error">Password cannot be less than 8 characters</string>
+    <string name="email_empty">Email cannot be empty</string>
+    <string name="password_empty">Password cannot be empty</string>
+    <string name="name_empty">Name cannot be empty</string>
+    <string name="register_succes">You have successfully registered!</string>
+
+    <string name="splash_screen_activity">Layar Pembuka</string>
+
+    <string name="navigation_home_title">Home</string>
+    <string name="navigation_event_title">Booking</string>
+    <string name="navigation_news_title">News</string>
+    <string name="navigation_profile_title">Profile</string>
+
+
+    <string name="booking">Booking</string>
+    <string name="news">News</string>
+    <string name="profile">Profile</string>
+    <string name="username">Username</string>
+    <string name="notification">Notification</string>
+    <string name="help">Help</string>
+    <string name="logout">logout</string>
+
+    <string name="welcome_to_sportspot">Welcome to SportSpot</string>
+    <string name="deskirpsi_sportspot">SportSpot adalah aplikasi pemesanan lapangan olahraga untuk menemukan dan memesan lapangan</string>
+    <string name="pilih_olahraga">Pilih Olahraga</string>
+    <string name="badminton">Badminton</string>
+    <string name="basket">Basket</string>
+    <string name="rekomendasi_lapangan">Rekomendasi Lapangan</string>
+    <string name="futsal">Futsal</string>
+    <string name="text_futsal">Futsal</string>
+    <string name="cari_lapangan">Cari Lapangan</string>
+    <string name="text_recomend">Rekomendasi Lapangan</string>
+    <string name="text_basket">Basket</string>
+    <string name="text_badminton">Badminton</string>
+    <string name="alamat">Alamat</string>
+    <string name="kota">Kota</string>
+    <string name="nomorhp">Nomor Hp</string>
+    <string name="namafutsal">Masukan Lapangan Futsal</string>
+    <string name="namefield">Name</string>
+    <string name="informasi">Informasi</string>
+    <string name="description_text">Nama Lapangan</string>
+    <string name="tanggal_booking">Tanggal Booking</string>
+    <string name="tgl_booking">Tanggal Booking</string>
+    <string name="tanggal_datang">Tanggal</string>
+    <string name="pilih_tanggal_datang">"Pilih Tanggal Booking "</string>
+    <string name="jam_datang">Jam</string>
+    <string name="pilih_jam_datang">Pilih Jam Booking</string>
+    <string name="bookingg">Booking</string>
+
+    <string name="welcome_imageview">Welcome ImageView</string>
+    <string name="button_register">Register</string>
+    <string name="button_login">Login</string>
+
+    <string name="email_cannot_be_empty">email_cannot_be_empty</string>
+    <string name="password_cannot_be_empty">password_cannot_be_empty</string>
+    <string name="displayName_cannot_be_empty">displayName_cannot_be_empty</string>
+    <string name="alamat_cannot_be_empty">alamat_cannot_be_empty</string>
+    <string name="kota_cannot_be_empty">kota_cannot_be_empty</string>
+    <string name="nomorhp_cannot_be_empty">nomorhp_cannot_be_empty</string>
+
+    <string name="register_success">register_success</string>
+    <string name="continuee">continuee</string>
+
+    <string name="login_successful">login_successful</string>
+
+    <string name="language">Language</string>
+
+    <string name="are_you_sure_want_to_logout">are_you_sure_want_to_logout</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="sport_news">Sport News</string>
+
+
+</resources>
