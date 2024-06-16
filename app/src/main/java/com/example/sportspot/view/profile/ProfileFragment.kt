@@ -1,88 +1,72 @@
 package com.example.sportspot.view.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import androidx.appcompat.app.AlertDialog
+import android.provider.Settings
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatButton
+import androidx.fragment.app.viewModels
 import com.example.sportspot.R
-import com.example.sportspot.api.ApiService
-import com.example.sportspot.preferences.UserPreferences
+import com.example.sportspot.databinding.FragmentProfileBinding
+import com.example.sportspot.view.ViewModelFactory
+import com.example.sportspot.view.main.MainViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-//private lateinit var userPreferences: UserPreferences
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfilFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ProfileFragment() : Fragment() {// TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class ProfileFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private val viewModel by viewModels<MainViewModel> {
+        ViewModelFactory.getInstance(requireActivity())
     }
+
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
-
-        // Find the logout button by its ID
-        val btnLogOut = view.findViewById<AppCompatButton>(R.id.btn_logout)
-
-        // Set an OnClickListener for the logout button
-//        btnLogOut.setOnClickListener {
-//            // Call the logout function from UserRepository
-//            lifecycleScope.launch {
-//                try {
-//                    UserRepository.getInstance(apiService, userPreferences).logout()
-//
-//                    // Explicitly start the SignInActivity
-//                    val signInIntent = Intent(requireContext(), LoginActivity::class.java)
-//                    signInIntent.flags =
-//                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//                    startActivity(signInIntent)
-//
-//                } catch (e: Exception) {
-//                    // Handle logout failure, if needed
-//                    Log.e("ProfilFragment", "Logout failed: ${e.message}")
-//                }
-//            }
-//        }
-
-        return view
+    ): View {
+        binding = FragmentProfileBinding.inflate(inflater , container , false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(apiService: ApiService, userPreferences: UserPreferences) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        binding.btnLanguage.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+        }
+
+        viewModel.getSession().observe(requireActivity()) { user ->
+            binding.tvProfileName.text = user.displayName
+        }
+        viewModel.getSession().observe(requireActivity()) { user ->
+            binding.tvProfileEmail.text = user.email
+        }
+        viewModel.getSession().observe(requireActivity()) { user ->
+            binding.tvProfilePhone.text = user.hp
+        }
+        viewModel.getSession().observe(requireActivity()) { user ->
+            binding.tvProfileAddress.text = user.alamat
+        }
+        viewModel.getSession().observe(requireActivity()) { user ->
+            binding.tvProfileCity.text = user.kota
+        }
+
+        binding.btnLogout.setOnClickListener {
+            val builder = AlertDialog.Builder(requireActivity())
+            builder.setMessage(getString(R.string.are_you_sure_want_to_logout))
+            builder.setPositiveButton(getString(R.string.yes)) { dialog, _ ->
+                viewModel.logout()
+                dialog.dismiss()
             }
+            builder.setNegativeButton(getString(R.string.no)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            val dialog = builder.create()
+            dialog.show()
+        }
     }
+
 }

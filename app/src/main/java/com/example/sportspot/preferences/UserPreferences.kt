@@ -20,6 +20,9 @@ class UserPreferences private constructor(private val dataStore: DataStore<Prefe
             preferences[UID_KEY] = user.uid
             preferences[EMAIL_KEY] = user.email
             preferences[DISPLAYNAME_KEY] = user.displayName
+            preferences[HP_KEY] = user.hp
+            preferences[ALAMAT_KEY] = user.alamat
+            preferences[KOTA_KEY] = user.kota
             preferences[TOKEN_KEY] = user.token
             preferences[IS_LOGIN_KEY] = true
         }
@@ -38,10 +41,23 @@ class UserPreferences private constructor(private val dataStore: DataStore<Prefe
                 preferences[EMAIL_KEY].toString(),
                 preferences[DISPLAYNAME_KEY].toString(),
                 preferences[TOKEN_KEY].toString(),
+                preferences[TOKEN_KEY].toString(),
+                preferences[TOKEN_KEY].toString(),
+                preferences[TOKEN_KEY].toString(),
                 preferences[IS_LOGIN_KEY] ?: false
             )
         }
 
+    }
+
+    suspend fun logout() {
+        dataStore.edit { preferences ->
+            preferences[UID_KEY] = ""
+            preferences[EMAIL_KEY] = ""
+            preferences[DISPLAYNAME_KEY] = ""
+            preferences[TOKEN_KEY] = ""
+            preferences[IS_LOGIN_KEY] = false
+        }
     }
 
     companion object {
@@ -51,6 +67,9 @@ class UserPreferences private constructor(private val dataStore: DataStore<Prefe
         private val UID_KEY = stringPreferencesKey("ud")
         private val EMAIL_KEY = stringPreferencesKey("email")
         private val DISPLAYNAME_KEY = stringPreferencesKey("displayName")
+        private val HP_KEY = stringPreferencesKey("hp")
+        private val ALAMAT_KEY = stringPreferencesKey("alamat")
+        private val KOTA_KEY = stringPreferencesKey("kota")
         private val TOKEN_KEY = stringPreferencesKey("token")
         private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
 

@@ -10,6 +10,7 @@ import com.example.sportspot.response.ErrorResponse
 import com.example.sportspot.response.LoginResponse
 import com.example.sportspot.response.RegisterResponse
 import com.google.gson.Gson
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -62,18 +63,18 @@ class UserRepository private constructor(
             "Login failed: ${response.message()}"
         }
     }
-//
-//    fun getSession(): Flow<UserModel> {
-//        return userPreference.getSession()
-//    }
-//
+
+    fun getSession(): Flow<UserModel> {
+        return userPreference.getSession()
+    }
+
     suspend fun saveSession(user: UserModel) {
         userPreference.saveSession(user)
     }
-//
-//    suspend fun logout() {
-//        userPreference.logout()
-//    }
+
+    suspend fun logout() {
+        userPreference.logout()
+    }
 
     companion object {
         @Volatile

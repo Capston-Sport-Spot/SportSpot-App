@@ -80,5 +80,10 @@
 
     <string name="language">Language</string>
 
+    <string name="are_you_sure_want_to_logout">are_you_sure_want_to_logout</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+
+
 
 </resources>

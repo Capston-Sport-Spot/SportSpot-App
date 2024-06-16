@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Sportspot</string>
+
+    <string name="title_login_page">Ayo pesan lapanganmu!</string>
+    <string name="email">email</string>
+    <string name="displayName">nama</string>
+    <string name="password">kata sandi</string>
+    <string name="login">Masuk</string>
+    <string name="title_register_page">Isi data Anda terlebih dahulu!</string>
+    <string name="name">nama</string>
+    <string name="signup">Daftar</string>
+    <string name="title_welcome_page">Selamat datang di SportSpot</string>
+    <string name="message_welcome_page">Ayo bagikan cerita Bangkit Anda dengan Bangkit Story. Tangkap dan bagikan momen belajar Anda di Studi Mandiri Bangkit.</string>
+
+    <string name="invalid_email_address">Alamat email tidak valid</string>
+    <string name="password_error">Kata sandi tidak boleh kurang dari 8 karakter</string>
+    <string name="email_empty">Email tidak boleh kosong</string>
+    <string name="password_empty">Kata sandi tidak boleh kosong</string>
+    <string name="name_empty">Nama tidak boleh kosong</string>
+    <string name="register_succes">Anda telah berhasil mendaftar!</string>
+
+    <string name="splash_screen_activity">Layar Pembuka</string>
+
+    <string name="navigation_home_title">Beranda</string>
+    <string name="navigation_event_title">Pemesanan</string>
+    <string name="navigation_news_title">Berita</string>
+    <string name="navigation_profile_title">Profil</string>
+
+
+    <string name="booking">Pemesanan</string>
+    <string name="news">Berita</string>
+    <string name="profile">Profil</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="notification">Notifikasi</string>
+    <string name="help">Bantuan</string>
+    <string name="logout">Keluar</string>
+
+    <string name="welcome_to_sportspot">Selamat datang di SportSpot</string>
+    <string name="deskirpsi_sportspot">SportSpot adalah aplikasi pemesanan lapangan olahraga untuk menemukan dan memesan lapangan</string>
+    <string name="pilih_olahraga">Pilih Olahraga</string>
+    <string name="badminton">Bulutangkis</string>
+    <string name="basket">Basket</string>
+    <string name="rekomendasi_lapangan">Rekomendasi Lapangan</string>
+    <string name="futsal">Futsal</string>
+    <string name="text_futsal">Futsal</string>
+    <string name="cari_lapangan">Cari Lapangan</string>
+    <string name="text_recomend">Rekomendasi Lapangan</string>
+    <string name="text_basket">Basket</string>
+    <string name="text_badminton">Bulutangkis</string>
+    <string name="alamat">Alamat</string>
+    <string name="kota">Kota</string>
+    <string name="nomorhp">Nomor HP</string>
+    <string name="namafutsal">Masukkan Lapangan Futsal</string>
+    <string name="namefield">Nama</string>
+    <string name="informasi">Informasi</string>
+    <string name="description_text">Nama Lapangan</string>
+    <string name="tanggal_booking">Tanggal Pemesanan</string>
+    <string name="tgl_booking">Tanggal Pemesanan</string>
+    <string name="tanggal_datang">Tanggal</string>
+    <string name="pilih_tanggal_datang">Pilih Tanggal Pemesanan</string>
+    <string name="jam_datang">Jam</string>
+    <string name="pilih_jam_datang">Pilih Jam Pemesanan</string>
+    <string name="bookingg">Pemesanan</string>
+
+    <string name="welcome_imageview">Gambar Sambutan</string>
+    <string name="button_register">Daftar</string>
+    <string name="button_login">Masuk</string>
+
+    <string name="email_cannot_be_empty">Email tidak boleh kosong</string>
+    <string name="password_cannot_be_empty">Kata sandi tidak boleh kosong</string>
+    <string name="displayName_cannot_be_empty">Nama tampilan tidak boleh kosong</string>
+    <string name="alamat_cannot_be_empty">Alamat tidak boleh kosong</string>
+    <string name="kota_cannot_be_empty">Kota tidak boleh kosong</string>
+    <string name="nomorhp_cannot_be_empty">Nomor HP tidak boleh kosong</string>
+
+    <string name="register_success">Pendaftaran berhasil</string>
+    <string name="continuee">Lanjutkan</string>
+
+    <string name="login_successful">Masuk berhasil</string>
+
+    <string name="language">Bahasa</string>
+
+    <string name="are_you_sure_want_to_logout">Apakah Anda yakin ingin keluar?</string>
+    <string name="yes">ya</string>
+    <string name="no">tidak</string>
+</resources>

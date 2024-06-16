@@ -54,6 +54,10 @@ class LoginActivity : AppCompatActivity() {
                         loginResponse.user?.uid.toString(),
                         loginResponse.user?.email.toString(),
                         loginResponse.user?.displayName.toString(),
+                        loginResponse.user?.hp.toString(),
+                        loginResponse.user?.alamat.toString(),
+                        loginResponse.user?.kota.toString(),
+
                         loginResponse.token.toString(),
                         true
                     )

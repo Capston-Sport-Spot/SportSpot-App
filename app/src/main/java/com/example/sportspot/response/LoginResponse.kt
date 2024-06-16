@@ -23,5 +23,14 @@ data class User(
 	val displayName: String? = null,
 
 	@field:SerializedName("email")
-	val email: String? = null
+	val email: String? = null,
+
+	@field:SerializedName("hp")
+	val hp: String? = null,
+
+	@field:SerializedName("alamat")
+	val alamat: String? = null,
+
+	@field:SerializedName("kota")
+	val kota: String? = null
 )
