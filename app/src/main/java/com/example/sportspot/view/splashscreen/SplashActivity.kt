@@ -1,14 +1,14 @@
 package com.example.sportspot.view.splashscreen
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sportspot.R
-import com.example.sportspot.view.login.LoginActivity
-import com.example.sportspot.view.register.RegisterActivity
 import com.example.sportspot.view.welcome.WelcomeActivity
 
+@SuppressLint("CustomSplashScreen")
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
 
@@ -23,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
         // Using Handler to delay the start of the MainActivity
         Handler().postDelayed({
             // Start MainActivity after the splash timeout
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
 
             // Close this activity

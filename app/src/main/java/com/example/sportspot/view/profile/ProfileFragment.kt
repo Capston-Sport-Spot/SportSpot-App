@@ -40,7 +40,7 @@ class ProfileFragment() : Fragment() {// TODO: Rename and change types of parame
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
         // Find the logout button by its ID
-        val btnLogOut = view.findViewById<AppCompatButton>(R.id.btnLogOut)
+        val btnLogOut = view.findViewById<AppCompatButton>(R.id.btn_logout)
 
         // Set an OnClickListener for the logout button
 //        btnLogOut.setOnClickListener {

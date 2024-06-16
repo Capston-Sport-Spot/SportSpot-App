@@ -26,7 +26,7 @@ class FieldAdapter(private val fieldList: List<FieldModel>, private val onItemCl
 
     override fun onBindViewHolder(holder: FieldViewHolder, position: Int) {
         val lapangan = fieldList[position]
-        val drawable = ContextCompat.getDrawable(holder.itemView.context, R.drawable.img_basket)
+        val drawable = ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_basket)
         holder.ivAvatar.setImageDrawable(drawable)
         holder.tvJudul.text = lapangan.name
         holder.tvDeskripsi.text = lapangan.description

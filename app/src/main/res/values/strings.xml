@@ -21,15 +21,10 @@
 
     <string name="splash_screen_activity">Layar Pembuka</string>
 
-
     <string name="navigation_home_title">Home</string>
     <string name="navigation_event_title">Booking</string>
     <string name="navigation_news_title">News</string>
     <string name="navigation_profile_title">Profile</string>
-
-    <string name="button1_desc">Deskripsi Tombol 1</string>
-    <string name="button2_desc">Deskripsi Tombol 2</string>
-    <string name="button3_desc">Deskripsi Tombol 3</string>
 
 
     <string name="booking">Booking</string>
@@ -83,7 +78,7 @@
 
     <string name="login_successful">login_successful</string>
 
-
+    <string name="language">Language</string>
 
 
 </resources>
