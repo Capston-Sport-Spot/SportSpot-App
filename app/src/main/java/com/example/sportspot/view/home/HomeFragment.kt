@@ -1,11 +1,16 @@
 package com.example.sportspot.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.example.sportspot.R
+import com.example.sportspot.view.main.BadmintonActivity
+import com.example.sportspot.view.main.BasketActivity
+import com.example.sportspot.view.main.FutsalActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,9 +40,34 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        view.findViewById<Button>(R.id.button_futsal).setOnClickListener {
+            startFutsalActivity()
+        }
+
+        view.findViewById<Button>(R.id.button_badminton).setOnClickListener {
+            startBadmintonActivity()
+        }
+
+        view.findViewById<Button>(R.id.button_basketball).setOnClickListener {
+            startBasketActivity()
+        }
+
+        return view
     }
 
+    private fun startFutsalActivity() {
+        startActivity(Intent(requireActivity(), FutsalActivity::class.java))
+    }
+
+    private fun startBadmintonActivity() {
+        startActivity(Intent(requireActivity(), BadmintonActivity::class.java))
+    }
+
+    private fun startBasketActivity() {
+        startActivity(Intent(requireActivity(), BasketActivity::class.java))
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

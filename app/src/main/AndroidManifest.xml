@@ -22,6 +22,9 @@
             android:name=".view.welcome.WelcomeActivity"
             android:exported="true" />
         <activity
+            android:name=".view.main.BadmintonActivity"
+            android:exported="false"/>
+        <activity
             android:name=".view.main.BasketActivity"
             android:exported="false" />
         <activity
