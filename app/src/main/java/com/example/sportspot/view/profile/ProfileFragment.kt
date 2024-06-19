@@ -44,7 +44,6 @@ class ProfileFragment : Fragment() {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
 
-        //tolong simpan data profilenya di sini
         viewModeel.profile.observe(viewLifecycleOwner, Observer { profile ->
             if (profile != null) {
                 binding.tvProfileEmail.text = profile.email

@@ -1,6 +1,7 @@
 package com.example.sportspot.api
 
 import com.example.sportspot.response.FieldResponse
+import com.example.sportspot.response.FieldResponseItem
 import com.example.sportspot.response.LoginResponse
 import com.example.sportspot.response.ProfileResponse
 import com.example.sportspot.response.RegisterResponse
@@ -10,7 +11,6 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
-import retrofit2.http.Query
 
 
 interface ApiService {
@@ -32,12 +32,8 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
-    @FormUrlEncoded
-    @GET("search")
-    fun searchfield(
-        @Query("name") name: String,
-        @Query("type") type: String
-    ): Call<FieldResponse>
+    @GET("lapangans")
+    fun getLapangans(): Call<List<FieldResponseItem>>
 
     @GET("profile")
     fun getProfile(

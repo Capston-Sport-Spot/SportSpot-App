@@ -1,39 +1,72 @@
 package com.example.sportspot.view.adapter
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.content.ContextCompat
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sportspot.R
-import com.example.sportspot.preferences.FieldModel
+import com.bumptech.glide.Glide
+import com.example.sportspot.databinding.ItemRowBinding
+import com.example.sportspot.response.FieldResponseItem
+import com.example.sportspot.view.detail.DetailFieldActivity
 
-class FieldAdapter(private val fieldList: List<FieldModel>, private val onItemClick: (FieldModel) -> Unit) : RecyclerView.Adapter<FieldAdapter.FieldViewHolder>() {
 
-    class FieldViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivAvatar: ImageView = itemView.findViewById(R.id.ivAvatar)
-        val tvJudul: TextView = itemView.findViewById(R.id.tvJudul)
-        val tvDeskripsi: TextView = itemView.findViewById(R.id.tvDeskripsi)
+class FieldAdapter : ListAdapter<FieldResponseItem, FieldAdapter.ViewHolder>(DIFF_CALLBACK) {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = ItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FieldViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_row, parent, false)
-        return FieldViewHolder(itemView)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val field = getItem(position)
+        holder.bind(field)
     }
 
-    override fun onBindViewHolder(holder: FieldViewHolder, position: Int) {
-        val lapangan = fieldList[position]
-        val drawable = ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_basket)
-        holder.ivAvatar.setImageDrawable(drawable)
-        holder.tvJudul.text = lapangan.name
-        holder.tvDeskripsi.text = lapangan.description
-        holder.itemView.setOnClickListener {
-            onItemClick(lapangan)
+    inner class ViewHolder(private val binding: ItemRowBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(lapangan: FieldResponseItem) {
+            with(binding) {
+                tvName.text = lapangan.lapanganName
+                tvLocation.text = lapangan.kota
+                Glide.with(itemView.context)
+                    .load(lapangan.imageUrl)
+                    .into(ivAvatar)
+                itemView.setOnClickListener{
+                    val intent = Intent(itemView.context, DetailFieldActivity::class.java)
+                    intent.putExtra(DetailFieldActivity.DETAIL_FIELD, lapangan)
+                    val optionsCompat: ActivityOptionsCompat =
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(
+                            itemView.context as Activity,
+                            Pair(ivAvatar, "profile"),
+                            Pair(tvName, "name"),
+                            Pair(tvLocation, "kota")
+                        )
+                    itemView.context.startActivity(intent, optionsCompat.toBundle())
+                }
+            }
         }
     }
 
-    override fun getItemCount() = fieldList.size
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FieldResponseItem>() {
+            override fun areItemsTheSame(
+                oldItem: FieldResponseItem,
+                newItem: FieldResponseItem
+            ): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(
+                oldItem: FieldResponseItem,
+                newItem: FieldResponseItem
+            ): Boolean {
+                return oldItem == newItem
+            }
+        }
+    }
 }

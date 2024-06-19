@@ -42,9 +42,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
-        viewModel.isLoading.observe(this) {
-            showLoading(it)
-        }
+//        viewModel.isLoading.observe(this) {
+//            showLoading(it)
+//        }
 
         viewModel.loginResponse.observe(this) { loginResponse ->
             if (loginResponse.message == "Login successful") {

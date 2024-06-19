@@ -7,6 +7,8 @@ import com.example.sportspot.api.ApiService
 import com.example.sportspot.preferences.UserModel
 import com.example.sportspot.preferences.UserPreferences
 import com.example.sportspot.response.ErrorResponse
+import com.example.sportspot.response.FieldResponse
+import com.example.sportspot.response.FieldResponseItem
 import com.example.sportspot.response.LoginResponse
 import com.example.sportspot.response.ProfileResponse
 import com.example.sportspot.response.RegisterResponse
@@ -29,6 +31,9 @@ class UserRepository private constructor(
 
     private val _profileResponse = MutableLiveData<ProfileResponse>()
     val profileResponse: LiveData<ProfileResponse> = _profileResponse
+
+    private var _list = MutableLiveData<List<FieldResponseItem>>()
+    var list: MutableLiveData<List<FieldResponseItem>> = _list
 
     suspend fun register(email: String, password: String, displayName: String, alamat: String, kota: String, hp: String): RegisterResponse {
         return apiService.register(email, password, displayName, alamat, kota, hp)
@@ -93,6 +98,39 @@ class UserRepository private constructor(
             "Login failed: ${response.message()}"
         }
     }
+
+    fun getLapangan() {
+        _isLoading.value = true
+        val client = apiService.getLapangans()
+        client.enqueue(object : Callback<List<FieldResponseItem>> {
+            override fun onResponse(
+                call: Call<List<FieldResponseItem>>,
+                response: Response<List<FieldResponseItem>>
+            ) {
+                if (response.isSuccessful) {
+                    _isLoading.value = false
+                    val newLapangans = response.body().orEmpty()
+                    val currentList = _list.value.orEmpty()
+                    val updatedList = mutableListOf<FieldResponseItem>()
+
+                    updatedList.addAll(newLapangans)
+                    updatedList.addAll(currentList)
+
+                    _list.value = updatedList
+                    Log.e("Ini sukses","Sukses")
+                } else {
+                    Log.e("Gagal", "Failed to get lapangans: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<FieldResponseItem>>, t: Throwable) {
+                _isLoading.value = false
+                Log.e("Gagal", "Error: ${t.message}")
+            }
+        })
+    }
+
+
 
     fun getSession(): Flow<UserModel> {
         return userPreference.getSession()
