@@ -23,12 +23,12 @@
 
     <string name="navigation_home_title">Beranda</string>
     <string name="navigation_event_title">Pemesanan</string>
-    <string name="navigation_news_title">Berita</string>
+    <string name="navigation_article_title">Berita</string>
     <string name="navigation_profile_title">Profil</string>
 
 
     <string name="booking">Pemesanan</string>
-    <string name="news">Berita</string>
+    <string name="article">Berita</string>
     <string name="profile">Profil</string>
     <string name="username">Nama Pengguna</string>
     <string name="notification">Notifikasi</string>
@@ -83,4 +83,6 @@
     <string name="are_you_sure_want_to_logout">Apakah Anda yakin ingin keluar?</string>
     <string name="yes">ya</string>
     <string name="no">tidak</string>
+
+    <string name="retry">Coba lagi</string>
 </resources>

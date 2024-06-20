@@ -12,9 +12,9 @@
         android:title="@string/navigation_event_title"
         app:showAsAction="always" />
     <item
-        android:id="@+id/navigation_news"
-        android:icon="@drawable/ic_news"
-        android:title="@string/navigation_news_title"
+        android:id="@+id/navigation_article"
+        android:icon="@drawable/ic_article"
+        android:title="@string/navigation_article_title"
         app:showAsAction="always" />
     <item
         android:id="@+id/navigation_profile"

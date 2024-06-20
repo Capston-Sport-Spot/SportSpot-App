@@ -23,12 +23,12 @@
 
     <string name="navigation_home_title">Home</string>
     <string name="navigation_event_title">Booking</string>
-    <string name="navigation_news_title">News</string>
+    <string name="navigation_article_title">Article</string>
     <string name="navigation_profile_title">Profile</string>
 
 
     <string name="booking">Booking</string>
-    <string name="news">News</string>
+    <string name="article">Article</string>
     <string name="profile">Profile</string>
     <string name="username">Username</string>
     <string name="notification">Notification</string>
@@ -83,6 +83,8 @@
     <string name="are_you_sure_want_to_logout">are_you_sure_want_to_logout</string>
     <string name="yes">yes</string>
     <string name="no">no</string>
+
+    <string name="retry">Retry</string>
 
 
 </resources>

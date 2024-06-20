@@ -1,5 +1,6 @@
 package com.example.sportspot.api
 
+import com.example.sportspot.response.ArticleResponse
 import com.example.sportspot.response.FieldResponse
 import com.example.sportspot.response.FieldResponseItem
 import com.example.sportspot.response.LoginResponse
@@ -40,5 +41,7 @@ interface ApiService {
         @Header("Authorization") token: String
     ): Call<ProfileResponse>
 
+    @GET("articles")
+    suspend fun getArticles(): ArticleResponse
 
 }

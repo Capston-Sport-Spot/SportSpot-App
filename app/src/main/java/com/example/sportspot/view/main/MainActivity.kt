@@ -10,10 +10,9 @@ import com.example.sportspot.api.ApiService
 import com.example.sportspot.databinding.ActivityMainBinding
 import com.example.sportspot.preferences.UserPreferences
 import com.example.sportspot.view.ViewModelFactory
+import com.example.sportspot.view.article.ArticleFragment
 import com.example.sportspot.view.booking.BookingFragment
 import com.example.sportspot.view.home.HomeFragment
-import com.example.sportspot.view.login.LoginActivity
-import com.example.sportspot.view.news.NewsFragment
 import com.example.sportspot.view.profile.ProfileFragment
 import com.example.sportspot.view.welcome.WelcomeActivity
 
@@ -48,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.navigation_home -> fragment(HomeFragment())
                 R.id.navigation_booking -> fragment(BookingFragment())
-                R.id.navigation_news -> fragment(NewsFragment())
+                R.id.navigation_article -> fragment(ArticleFragment())
                 R.id.navigation_profile -> fragment(ProfileFragment())
                 else -> {
                 }
