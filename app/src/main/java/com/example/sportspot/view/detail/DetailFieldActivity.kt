@@ -28,11 +28,10 @@ class DetailFieldActivity : AppCompatActivity() {
             .into(binding.ivImage)
 
         binding.tvName.text = fieldItem.lapanganName
-        binding.tvLocation.text = fieldItem.location
-        binding.tvOpeningHours.text = "${fieldItem.openingHours?.open ?: "N/A"} - ${fieldItem.openingHours?.close ?: "N/A"}"
-        binding.tvLapanganType.text = fieldItem.lapanganType
-        binding.tvKota.text = fieldItem.kota
-        binding.tvAlamat.text = fieldItem.alamat
+        binding.tvOpeningHours.text = "Opening Hours: ${fieldItem.openingHours?.open ?: "N/A"} - ${fieldItem.openingHours?.close ?: "N/A"}"
+        binding.tvLapanganType.text = "Field Type: ${fieldItem.lapanganType}"
+        binding.tvKota.text = "City: ${fieldItem.kota}"
+        binding.tvAlamat.text = "Address: ${fieldItem.alamat}"
 
         fieldItem.subFields?.let { subFields ->
             setupSubFieldsRecyclerView(subFields)
